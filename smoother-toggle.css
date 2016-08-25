@@ -1,0 +1,78 @@
+.sidebarContainer{
+	position: fixed;
+	left: 0;
+	top : 0;
+	width: 100%;
+	height: 100%;
+	/*I define 9 to bethe highest level*/
+	z-index: 8;
+	/*Since this container is on another layer, It should not have any pointer event*/
+	pointer-events: none; 
+}
+
+.sidebarList{
+	position: relative;
+	width: 80%;
+	max-width: 400px;
+	height: 100%;
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(170,170,170,0.72);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(170,170,170,0.72);
+	box-shadow: 2px 2px 5px 0px rgba(170,170,170,0.72);
+    pointer-events: auto;
+    /*I amnot sur if if I want to do this. flexbox has poor old browser compatibility*/
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.toggle-target{
+	overflow: hidden;
+}
+
+/*This is for the shadow in background*/
+/*delete if you are using it as a normal .toggle() function*/
+.toggle-target:after{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	opacity: 0;
+	/*Although mordern browser is clever enough to automatically render opacity in GPU, i putit here in case.*/
+	will-change: opacity;
+	pointer-events: none;
+	transition: opacity 0.2s cubic-bezier(0,0,0.3,1);
+}
+
+.toggle-target > div{
+	-ms-transform: translateX(-100%); /* IE 9 */
+    -webkit-transform: translateX(-100%); /* Chrome, Safari, Opera */
+    transform: translateX(-100%);
+    /*endable GPU rendering for this layer*/
+    will-change: transform;
+    /*the higest layer*/
+    z-index: 9;
+}
+
+.toggle-isvisible{
+	/*when the sidebar toggles, the poiter event should be auto*/
+	pointer-events: auto;
+}
+
+.toggle-isvisible.toggle-target > div{
+	/*when the sidebar shows, its postion should be top:0; left:0;*/
+	/*This way is better. If we use left/top, then the browser is always creating new layers*/
+	-ms-transform: none;
+	-webkit-transform: none;
+  	transform: none;
+}
+
+.toggle-animation.toggle-target > div{
+	transition: all 200ms ease-in;
+}
+
+.toggle-animation.toggle-isvisible.toggle-target > div{
+	transition: all 200ms ease-out;
+}

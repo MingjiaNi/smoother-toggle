@@ -1,9 +1,26 @@
-<!-- The sidebar should be on another layer so that it is easier to render -->
-<div id="sidebarContainer">
-    <div class="sidebarList"></div>
-</div>
-<div class="layout">
-    <div class="navbar">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Smoother Toggle</title>
+    <!-- Custom Theme Style -->
+    <link href="smoother-toggle.css" rel="stylesheet">
+  </head>
+  <body>
+	<!-- The sidebar should be on another layer so that it is easier to render -->
+		<div id="sidebarContainer toggle-target">
+	    <div class="sidebarList"></div>
+		</div>
+		<div class="layout">
+	    <div class="navbar">
         <div class="toggle-trigger" data-toggle-target="sidebarContainer"></div>
-    </div>
-</div>
+	    </div>
+		</div>
+		<script src="smoother-toggle.js"></script>
+	</body>
+</html>
