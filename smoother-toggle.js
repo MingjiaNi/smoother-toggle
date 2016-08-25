@@ -1,19 +1,35 @@
 var toggleTrigger = document.querySelectorAll(".toggle-trigger");
 var toggleTarget = getTarget(toggleTrigger);
+console.log(toggleTarget);
+function addEvtListen(){
+	// for (i=0; i<toggleTarget.length; i++){
+	// 	//Once the animation is finished, remove the class
+	// 	toggleTarget[i].addEventListener("transitionend",finishToggle);
+	// }
 
-//One the animation is finished, remove the class
-toggleTarget.addEventListener("transitionend",finishToggle);
-//once the element with class .toggle-trigger is clicked, add animation to it's data-toggle-target.
-//If the target will show or hide depends on teh css class .toggle-isvisible.
-toggleTrigger.addEventListener("click",startToggle);
-//if the target is clicked, toggle
-toggleTarget.addEventListener("clicked",startToggle);
+	// for (i=0;i<toggleTrigger.length;i++){
+	// 	//once the element with class .toggle-trigger is clicked, add animation to it's data-toggle-target.
+	// 	//If the target will show or hide depends on teh css class .toggle-isvisible.
+	// 	toggleTrigger[i].addEventListener("click",startToggle);
+
+	// }
+
+	// for (i=0; i<toggleTarget.length; i++){
+	// 	//if the target is clicked, toggle
+	// 	toggleTarget[i].addEventListener("click",startToggle);
+	// }
+		toggleTarget[0].addEventListener("transitionend",finishToggle);
+		toggleTrigger[0].addEventListener("click",startToggle);
+		toggleTarget[0].addEventListener("click",startToggle);
+
+
+}
 
 function getTarget(trigger){
 	var targets = [];
 	for (var i = 0; i < trigger.length; i++){
 		target = trigger[i].getAttribute("data-toggle-target");
-		targets += document.getElementById(target);
+		targets.push(document.getElementById(target));
 	}
 	return targets;
 }
@@ -37,3 +53,5 @@ function startToggle() {
 function finishToggle(){
 	this.classList.remove("toggle-animation");
 }
+
+window.onload = addEvtListen();

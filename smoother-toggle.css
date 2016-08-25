@@ -1,4 +1,4 @@
-.sidebarContainer{
+#sidebarContainer{
 	position: fixed;
 	left: 0;
 	top : 0;
@@ -15,6 +15,7 @@
 	width: 80%;
 	max-width: 400px;
 	height: 100%;
+	background-color: green;
 	-webkit-box-shadow: 2px 2px 5px 0px rgba(170,170,170,0.72);
 	-moz-box-shadow: 2px 2px 5px 0px rgba(170,170,170,0.72);
 	box-shadow: 2px 2px 5px 0px rgba(170,170,170,0.72);
@@ -26,24 +27,63 @@
     flex-direction: column;
 }
 
+body{
+	height: 100vh;
+	padding:0px;
+	margin: 0px;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.navbar{
+	height: 60px;
+	background-color: #dddddd;
+}
+
+.toggle-trigger{
+	height: 60px;
+	background-color: #aaaaaa;
+	width: 60px;
+	float: right;
+}
+
+
+
+
+
+
+
+/*Code above was jast for demo*/
+
 .toggle-target{
 	overflow: hidden;
 }
 
 /*This is for the shadow in background*/
 /*delete if you are using it as a normal .toggle() function*/
-.toggle-target:after{
+.toggle-target:after {
+	content: '';
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.4);
 	opacity: 0;
 	/*Although mordern browser is clever enough to automatically render opacity in GPU, i putit here in case.*/
 	will-change: opacity;
 	pointer-events: none;
-	transition: opacity 0.2s cubic-bezier(0,0,0.3,1);
+	transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+}
+
+.toggle-isvisible.toggle-target:after {
+	opacity: 1;
+  	pointer-events: auto;
 }
 
 .toggle-target > div{
@@ -70,7 +110,7 @@
 }
 
 .toggle-animation.toggle-target > div{
-	transition: all 200ms ease-in;
+	transition: all 350ms ease-in;
 }
 
 .toggle-animation.toggle-isvisible.toggle-target > div{
