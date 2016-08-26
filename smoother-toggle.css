@@ -63,9 +63,8 @@ body{
 	overflow: hidden;
 }
 
-/*This is for the shadow in background*/
-/*delete if you are using it as a normal .toggle() function*/
-.toggle-target:after {
+
+.toggle-sidebar.toggle-target:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -80,7 +79,7 @@ body{
 	transition: opacity 0.3s cubic-bezier(0,0,1,1);
 }
 
-.toggle-isvisible.toggle-target:after {
+.toggle-sidebar.toggle-isvisible.toggle-target:after {
 	opacity: 1;
   	pointer-events: auto;
 }
@@ -94,6 +93,31 @@ body{
     /*the higest layer*/
     z-index: 9;
 }
+
+.toggle-target-left > div{
+	-ms-transform: translateX(-100%); /* IE 9 */
+    -webkit-transform: translateX(-100%); /* Chrome, Safari, Opera */
+    transform: translateX(-100%);
+}
+
+.toggle-target-right > div{
+	-ms-transform: translateX(100%); /* IE 9 */
+    -webkit-transform: translateX(100%); /* Chrome, Safari, Opera */
+    transform: translateX(100%);
+}
+
+.toggle-target-up > div{
+	-ms-transform: translateY(-100%); /* IE 9 */
+    -webkit-transform: translateY(-100%); /* Chrome, Safari, Opera */
+    transform: translateY(-100%);
+}
+
+.toggle-target-down > div{
+	-ms-transform: translateY(100%); /* IE 9 */
+    -webkit-transform: translateY(100%); /* Chrome, Safari, Opera */
+    transform: translateY(100%);
+}
+
 
 .toggle-isvisible{
 	/*when the sidebar toggles, the poiter event should be auto*/
