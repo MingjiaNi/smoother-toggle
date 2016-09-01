@@ -10,6 +10,7 @@
     <title>Smoother Toggle</title>
     <!-- Custom Theme Style -->
     <link href="smoother-toggle.css" rel="stylesheet">
+    <link href="demo.css" rel="stylesheet">
   </head>
   <body>
 	<!-- The sidebar should be on another layer so that it is easier to render -->
@@ -20,38 +21,40 @@
 	    <div class="navbar">
         <div class="toggle-trigger" data-toggle-target="sidebarContainer">NavBar</div>
 	    </div>
-      <button class="toggle-trigger" data-toggle-target="toggleRight">toggle right</button>
-      <div id="toggleRight" class="toggle-target toggle-target-right" style="width:100px;height:50px;display:inline-block">
-        <div style="width:100px;height:50px;background-color:black;" ></div>
-      </div>
-      <button class="toggle-trigger" data-toggle-target="toggleLeft">toggle left</button>
-      <div id="toggleLeft" class="toggle-target toggle-target-left" style="width:100px;height:50px;display:inline-block">
-        <div style="width:100px;height:50px;background-color:black;" ></div>
-      </div>
-      <button class="toggle-trigger" data-toggle-target="toggleUp">toggle up</button>
-      <div id="toggleUp" class="toggle-target toggle-target-up" style="width:100px;height:50px;display:inline-block">
-        <div style="width:100px;height:50px;background-color:black;" ></div>
-      </div>
-      <button class="toggle-trigger" data-toggle-target="toggleDown">toggle down</button>
-      <div id="toggleDown" class="toggle-target toggle-target-down" style="width:100px;height:50px;display:inline-block">
-        <div style="width:100px;height:50px;background-color:black;" ></div>
-      </div>
-      <div style="margin:20px">
-        <div>
-          <br>
-          To use this, include the css and js files. add .toggle-trigger class to the div which you would like to trigger the toggle animation when it is clicked. Also add a data attribute, data-toggle-target. The value should be the id of the container of the toggle element.
-          <br>
-          Add a .toggle-target class to the container. If you want to set teh direction, add .toggle-target-left ,.toggle-target-right, .toggle-target-up or .toggle-target-down (the default direction is left). Then put the toggle element in the container.If you are using this as a side bar, add .toggle-sidebar to the toggle target. This will also add shadows to the background.
-          <br>
-          You can also look at the examples in this demo, or customize the css/js file.
-          <br>
+      <div class="container">
+        <button class="toggle-trigger" data-toggle-target="toggleRight">toggle right</button>
+        <div id="toggleRight" class="toggle-target toggle-target-right" style="width:100px;height:50px;display:inline-block">
+          <div style="width:100px;height:50px;background-color:black;" ></div>
         </div>
-        <div><br>This is the screenshot of the FPS</div>
-        <img src="sceenshot1.png" width="720px">
-        <img src="screenshot2.png" width="720px">
-        <div>This is the screenshot of another web app using jQuery .toggle()</div>
-        <img src="jQueryToggleScreenshot.png" width="720px">
-        <div>The FPS is much higher using CSS3 and the animation is morefluent. If the number of the element increases or the performance decreases, the difference will be more obvious.</div>
+        <button class="toggle-trigger" data-toggle-target="toggleLeft">toggle left</button>
+        <div id="toggleLeft" class="toggle-target toggle-target-left" style="width:100px;height:50px;display:inline-block">
+          <div style="width:100px;height:50px;background-color:black;" ></div>
+        </div>
+        <button class="toggle-trigger" data-toggle-target="toggleUp">toggle up</button>
+        <div id="toggleUp" class="toggle-target toggle-target-up" style="width:100px;height:50px;display:inline-block">
+          <div style="width:100px;height:50px;background-color:black;" ></div>
+        </div>
+        <button class="toggle-trigger" data-toggle-target="toggleDown">toggle down</button>
+        <div id="toggleDown" class="toggle-target toggle-target-down" style="width:100px;height:50px;display:inline-block">
+          <div style="width:100px;height:50px;background-color:black;" ></div>
+        </div>
+        <div style="margin:20px">
+          <div>
+            <br>
+            To use this, include the css and js files. add .toggle-trigger class to the div which you would like to trigger the toggle animation when it is clicked. Also add a data attribute, data-toggle-target. The value should be the id of the container of the toggle element.
+            <br>
+            Add a .toggle-target class to the container. If you want to set teh direction, add .toggle-target-left ,.toggle-target-right, .toggle-target-up or .toggle-target-down (the default direction is left). Then put the toggle element in the container.If you are using this as a side bar, add .toggle-sidebar to the toggle target. This will also add shadows to the background.
+            <br>
+            You can also look at the examples in this demo, or customize the css/js file.
+            <br>
+          </div>
+          <div><br>This is the screenshot of the FPS</div>
+          <img src="sceenshot1.png" width="720px">
+          <img src="screenshot2.png" width="720px">
+          <div>This is the screenshot of another web app using jQuery .toggle()</div>
+          <img src="jQueryToggleScreenshot.png" width="720px">
+          <div>The FPS is much higher using CSS3 and the animation is morefluent. If the number of the element increases or the performance decreases, the difference will be more obvious.</div>
+        </div>
       </div>
 		</div>
 		<script src="smoother-toggle.js"></script>
